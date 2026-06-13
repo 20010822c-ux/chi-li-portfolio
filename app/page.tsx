@@ -214,9 +214,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <p className="max-w-[295px] rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-center text-sm font-semibold leading-6 text-cyan-50 backdrop-blur">
-                  执行力与内容感，需要同时在线。
-                </p>
               </div>
             </div>
 
