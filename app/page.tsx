@@ -188,13 +188,13 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:bg-cyan-100" href="#项目">
+                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-200" href="#项目">
                     查看项目案例
                   </a>
-                  <a className="rounded-full border border-white/15 bg-white/10 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/15" href="/resume-chi-li.pdf" download>
+                  <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition hover:bg-slate-800/80 hover:ring-cyan-200/50" href="/resume-chi-li.pdf" download>
                     下载简历
                   </a>
-                  <a className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-slate-950 transition hover:bg-slate-100" href="#联系">
+                  <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition hover:bg-amber-400/20 hover:text-white" href="#联系">
                     联系我
                   </a>
                 </div>
@@ -251,9 +251,9 @@ export default function Home() {
 
   <a
     href="#联系"
-    className="rounded-full bg-white px-4 py-2 text-xs font-bold text-slate-950 shadow-lg shadow-black/20 transition hover:bg-cyan-100"
+    className="rounded-full bg-white/10 px-4 py-2 text-xs font-bold text-white ring-1 ring-white/25 shadow-lg shadow-black/20 transition hover:bg-white/15 hover:ring-cyan-200/40"
   >
-    联系我 <span className="ml-1 text-cyan-600">●</span>
+    联系我 <span className="ml-1 text-cyan-300">●</span>
   </a>
 </nav>
 
@@ -278,18 +278,21 @@ export default function Home() {
     </p>
 
     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-      <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 transition hover:bg-cyan-100" href="#项目">
+      <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-200" href="#项目">
         查看项目案例
       </a>
       <a
-        className="rounded-full bg-white/10 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-white/20 transition hover:bg-white/15"
+        className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition hover:bg-slate-800/80 hover:ring-cyan-200/50"
         href="/resume-chi-li.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
         下载简历
       </a>
-      <a className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-slate-950 transition hover:bg-slate-100" href="#联系">
+      <a
+        className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition hover:bg-amber-400/20 hover:text-white"
+        href="#联系"
+      >
         联系我
       </a>
     </div>
@@ -337,6 +340,7 @@ export default function Home() {
 
   </div>
 </section>
+
           </div>
         </div>
       </section>
