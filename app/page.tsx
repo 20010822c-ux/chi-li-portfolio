@@ -1,3 +1,4 @@
+// Keep the portfolio content in this page so the static Vercel build can render the latest PR layout.
 const projects = [
   {
     name: "Chi Forest × XJTLU 校园商业创新项目",
