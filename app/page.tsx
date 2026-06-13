@@ -188,13 +188,13 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-200" href="#项目">
+                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30" href="#项目">
                     查看项目案例
                   </a>
-                  <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition hover:bg-slate-800/80 hover:ring-cyan-200/50" href="/resume-chi-li.pdf" download>
+                  <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70" href="/resume-chi-li.pdf" download>
                     下载简历
                   </a>
-                  <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition hover:bg-amber-400/20 hover:text-white" href="#联系">
+                  <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70" href="#联系">
                     联系我
                   </a>
                 </div>
