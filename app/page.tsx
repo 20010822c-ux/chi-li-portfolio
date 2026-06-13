@@ -172,7 +172,7 @@ export default function Home() {
                   内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-                  艺术科技与娱乐专业应届毕业生，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将项目执行能力、内容制作经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调或电竞内容相关岗位。
+                  艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
                 </p>
 
                 <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
@@ -188,13 +188,13 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-200" href="#项目">
+                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30" href="#项目">
                     查看项目案例
                   </a>
-                  <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition hover:bg-slate-800/80 hover:ring-cyan-200/50" href="/resume-chi-li.pdf" download>
+                  <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70" href="/resume-chi-li.pdf" download>
                     下载简历
                   </a>
-                  <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition hover:bg-amber-400/20 hover:text-white" href="#联系">
+                  <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70" href="#联系">
                     联系我
                   </a>
                 </div>
@@ -269,20 +269,20 @@ export default function Home() {
         </h2>
 
         <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-          艺术科技与娱乐专业应届毕业生，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。
-          希望将项目执行能力、内容制作经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调或电竞内容相关岗位。
+          艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。
+希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
-            className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-200"
+            className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
             href="#项目"
           >
             查看项目案例
           </a>
 
           <a
-            className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition hover:bg-slate-800/80 hover:ring-cyan-200/50"
+            className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
             href="/resume-chi-li.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -291,7 +291,7 @@ export default function Home() {
           </a>
 
           <a
-            className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition hover:bg-amber-400/20 hover:text-white"
+            className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70 focus:outline-none focus:ring-2 focus:ring-amber-300/50"
             href="#联系"
           >
             联系我
@@ -341,9 +341,9 @@ export default function Home() {
 
       <section id="关于我" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="About" title="关于我" />
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/20 sm:p-8">
+        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-white/[0.06] hover:shadow-[0_20px_80px_rgba(34,211,238,0.12)] sm:p-8">
           <p className="max-w-5xl text-lg leading-9 text-slate-200">
-            我是 XJTLU 艺术科技与娱乐专业应届毕业生，长期处于全英文授课与跨文化协作环境中。过往项目覆盖商业创新、展览执行、AIGC 影像创作、短视频制作与游戏测试，熟悉从需求拆解、任务推进到内容交付的流程。现求职方向为内容运营、项目执行、活动策划助理及电竞内容运营，希望在真实业务中连接创意、执行与用户沟通。
+            我是 XJTLU 艺术科技与娱乐专业应届毕业生，本科阶段长期处于全英文授课与跨文化协作环境中。我的项目经历覆盖商业创新、展览执行、AIGC 影像创作、短视频制作与游戏测试，熟悉从项目调研、任务推进、跨部门沟通到内容交付的完整流程。现求职方向包括内容运营、项目执行、活动策划助理及电竞内容运营，希望将内容制作能力、项目执行经验和游戏/电竞兴趣结合，应用于真实业务场景中的内容策划、活动落地与用户沟通。
           </p>
         </div>
       </section>
