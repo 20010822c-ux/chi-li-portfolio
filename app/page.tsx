@@ -130,6 +130,14 @@ const awards = [
   "受邀作为 XJTLU 优秀毕业生接受校方采访",
 ];
 
+const navItems = [
+  { label: "首页", href: "#top" },
+  { label: "关于我", href: "#关于我" },
+  { label: "项目", href: "#项目" },
+  { label: "实习", href: "#实习" },
+  { label: "能力", href: "#能力" },
+  { label: "联系", href: "#联系" },
+];
 const navItems = ["关于我", "项目", "实习", "能力", "联系"];
 
 export default function Home() {
@@ -137,6 +145,86 @@ export default function Home() {
     <main className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_78%)]" />
 
+      <section id="top" className="relative mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
+        <div className="relative flex min-h-[680px] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(34,211,238,0.18),transparent_22rem),radial-gradient(circle_at_82%_20%,rgba(251,146,60,0.16),transparent_24rem),linear-gradient(135deg,#061526_0%,#0b1220_50%,#120d12_100%)] p-5 shadow-[0_35px_110px_rgba(0,0,0,0.5)] sm:rounded-[2.75rem] sm:p-7 lg:h-[720px] lg:p-9">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 [mask-image:radial-gradient(circle_at_center,black,transparent_82%)]" />
+          <div className="pointer-events-none absolute -left-24 top-28 h-72 w-72 rounded-full bg-cyan-300/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-orange-300/12 blur-3xl" />
+
+          <div className="relative z-10 flex w-full flex-col justify-between gap-8">
+            <div className="grid flex-1 items-center gap-10 pt-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.78fr)] lg:gap-12 lg:pt-0">
+              <div className="max-w-3xl">
+                <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100 shadow-lg shadow-black/10 backdrop-blur">
+                  <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_16px_rgba(110,231,183,0.85)]" />
+                  Open to Work
+                </div>
+
+                <h1 className="text-[clamp(2.5rem,9vw,5.8rem)] font-black leading-[0.95] tracking-[-0.06em] text-white">
+                  李持
+                  <span className="mt-2 block text-[0.72em] tracking-[-0.045em] text-cyan-100">Chi Li</span>
+                </h1>
+
+                <h2 className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl lg:text-[1.7rem]">
+                  内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
+                </h2>
+                <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+                  艺术科技与娱乐专业应届毕业生，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将项目执行能力、内容制作经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调或电竞内容相关岗位。
+                </p>
+
+                <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+                  <a className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/35 hover:text-cyan-100" href="mailto:lichi2019@163.com">
+                    <span className="text-slate-500">Email: </span>lichi2019@163.com
+                  </a>
+                  <a className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/35 hover:text-cyan-100" href="tel:18566055261">
+                    <span className="text-slate-500">Phone: </span>18566055261
+                  </a>
+                  <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 sm:col-span-2">
+                    <span className="text-slate-500">Location: </span>China / Open to opportunities
+                  </p>
+                </div>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-950/20 transition hover:bg-cyan-100" href="#项目">
+                    查看项目案例
+                  </a>
+                  <a className="rounded-full border border-white/15 bg-white/10 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/15" href="/resume-chi-li.pdf" download>
+                    下载简历
+                  </a>
+                  <a className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-slate-950 transition hover:bg-slate-100" href="#联系">
+                    联系我
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center gap-5 lg:items-end">
+                <div className="relative w-full max-w-[295px] rounded-[2rem] border border-white/15 bg-white/[0.06] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-md">
+                  <div className="aspect-[295/413] overflow-hidden rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.18),rgba(15,23,42,0.58)_46%,rgba(2,6,23,0.92))] p-4">
+                    <div className="relative flex h-full flex-col items-center justify-center rounded-[1.2rem] border border-dashed border-cyan-100/35 bg-black/10 text-center">
+                      <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-100/35 bg-cyan-100/10 text-4xl text-cyan-50">
+                        人像
+                      </div>
+                      <p className="text-lg font-semibold text-white">求职头像 Placeholder</p>
+                      <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-300">
+                        预留 295 × 413 px 比例，后续可替换为正式职业头像。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <p className="max-w-[295px] rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-center text-sm font-semibold leading-6 text-cyan-50 backdrop-blur">
+                  执行力与内容感，需要同时在线。
+                </p>
+              </div>
+            </div>
+
+            <nav className="mx-auto w-full max-w-3xl overflow-x-auto rounded-full border border-white/10 bg-black/30 p-2 shadow-2xl shadow-black/20 backdrop-blur-md">
+              <div className="flex min-w-max items-center justify-center gap-1 sm:min-w-0 sm:flex-wrap">
+                {navItems.map((item) => (
+                  <a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white hover:text-slate-950">
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </nav>
       <section id="top" className="relative mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 lg:py-6">
         <div className="relative min-h-[calc(100vh-2rem)] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_22%_22%,rgba(34,211,238,0.24),transparent_26rem),radial-gradient(circle_at_88%_15%,rgba(251,113,133,0.24),transparent_22rem),linear-gradient(135deg,#082033_0%,#0f172a_44%,#13090f_100%)] px-5 py-5 shadow-[0_35px_120px_rgba(0,0,0,0.5)] sm:rounded-[2.5rem] sm:px-8 lg:px-10">
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(34,211,238,0.08)_1px,transparent_1px),linear-gradient(rgba(34,211,238,0.06)_1px,transparent_1px)] bg-[size:64px_64px] opacity-50 [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]" />
