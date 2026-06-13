@@ -172,7 +172,7 @@ export default function Home() {
                   内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-                  艺术科技与娱乐专业应届毕业生，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将项目执行能力、内容制作经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调或电竞内容相关岗位。
+                  艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
                 </p>
 
                 <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
