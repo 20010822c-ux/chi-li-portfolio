@@ -150,8 +150,9 @@ export default function Home() {
   return (
     <main className="relative isolate overflow-hidden">
       <BackgroundAnimation />
+      <TopNavigation />
 
-      <section id="top" className="relative mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
+      <section id="top" className="relative mx-auto max-w-7xl px-4 pb-5 pt-24 sm:px-6 lg:px-8 lg:pb-8 lg:pt-28">
         <div className="relative flex min-h-[680px] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(34,211,238,0.18),transparent_22rem),radial-gradient(circle_at_82%_20%,rgba(251,146,60,0.16),transparent_24rem),linear-gradient(135deg,#061526_0%,#0b1220_50%,#120d12_100%)] p-5 shadow-[0_35px_110px_rgba(0,0,0,0.5)] sm:rounded-[2.75rem] sm:p-7 lg:h-[720px] lg:p-9">
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40 [mask-image:radial-gradient(circle_at_center,black,transparent_82%)]" />
           <div className="pointer-events-none absolute -left-24 top-28 h-72 w-72 rounded-full bg-cyan-300/15 blur-3xl" />
@@ -222,8 +223,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <TopNavigation />
 
       <section id="关于我" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="About" title="关于我" />
@@ -362,7 +361,7 @@ export default function Home() {
 
 function TopNavigation() {
   return (
-    <header className="sticky top-4 z-50 mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+    <header className="fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2">
       <nav className="flex items-center justify-between gap-4 rounded-full border border-white/10 bg-slate-950/70 px-4 py-3 shadow-xl shadow-black/20 backdrop-blur-md sm:px-5">
         <a href="#top" className="shrink-0 text-sm font-black tracking-tight text-white transition-all duration-200 ease-out hover:text-cyan-200">
           ChiLi-LC
