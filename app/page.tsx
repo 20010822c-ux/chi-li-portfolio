@@ -218,60 +218,6 @@ export default function Home() {
                 <p className="mt-2 font-medium text-white">{label}</p>
               </div>
             ))}
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#050b12]/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#top" className="text-sm font-semibold tracking-[0.3em] text-cyan-200">
-            CHI LI
-          </a>
-          <div className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
-            {navItems.map((item) => (
-              <a key={item} href={`#${item}`} className="transition hover:text-cyan-200">
-                {item}
-              </a>
-            ))}
-          </div>
-        </nav>
-      </header>
-
-      <section id="top" className="relative mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
-        <div>
-          <p className="mb-5 inline-flex rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.12)]">
-            Open to Work · 内容运营 / 项目执行 / 活动策划 / 电竞内容
-          </p>
-          <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            李持 <span className="text-cyan-200">Chi Li</span>
-          </h1>
-          <h2 className="mt-6 max-w-3xl text-2xl font-semibold leading-snug text-slate-100 sm:text-3xl">
-            内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
-          </h2>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            艺术科技与娱乐专业应届毕业生，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将项目执行能力、内容制作经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调或电竞内容相关岗位。
-          </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 transition hover:bg-cyan-200" href="#项目">
-              查看项目案例
-            </a>
-            <a className="rounded-full border border-cyan-200/40 px-6 py-3 text-center text-sm font-bold text-cyan-100 transition hover:border-cyan-200 hover:bg-cyan-200/10" href="/resume-chi-li.pdf" download>
-              下载简历
-            </a>
-            <a className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-bold text-slate-100 transition hover:border-white/35 hover:bg-white/10" href="#联系">
-              联系我
-            </a>
-          </div>
-        </div>
-
-        <div className="mx-auto w-full max-w-[295px] lg:ml-auto lg:mr-12">
-          <div className="relative aspect-[295/413] overflow-hidden rounded-[2rem] border border-cyan-200/25 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-950 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_18%,rgba(34,211,238,0.28),transparent_30%),linear-gradient(180deg,transparent,rgba(3,7,18,0.78))]" />
-            <div className="relative flex h-full flex-col items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-100/30 bg-white/[0.03] text-center">
-              <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-100/30 bg-cyan-100/10 text-4xl">
-                人像
-              </div>
-              <p className="text-lg font-semibold text-white">求职头像 Placeholder</p>
-              <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-300">
-                预留 295 × 413 px 比例，后续可替换为正式证件或职业头像。
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -411,7 +357,12 @@ export default function Home() {
   );
 }
 
-function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
+type SectionTitleProps = {
+  eyebrow: string;
+  title: string;
+};
+
+function SectionTitle({ eyebrow, title }: SectionTitleProps) {
   return (
     <div className="mb-8">
       <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">{eyebrow}</p>
