@@ -146,8 +146,8 @@ const navItems = [
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_78%)]" />
+    <main className="relative isolate overflow-hidden">
+      <BackgroundAnimation />
 
       <section id="top" className="relative mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
         <div className="relative flex min-h-[680px] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(34,211,238,0.18),transparent_22rem),radial-gradient(circle_at_82%_20%,rgba(251,146,60,0.16),transparent_24rem),linear-gradient(135deg,#061526_0%,#0b1220_50%,#120d12_100%)] p-5 shadow-[0_35px_110px_rgba(0,0,0,0.5)] sm:rounded-[2.75rem] sm:p-7 lg:h-[720px] lg:p-9">
@@ -471,6 +471,21 @@ export default function Home() {
         </div>
       </section>
     </main>
+  );
+}
+
+function BackgroundAnimation() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="portfolio-grid-motion absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:72px_72px] opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent_78%)]" />
+      <div className="portfolio-glow absolute -left-24 top-10 h-96 w-96 rounded-full bg-cyan-300/20 blur-3xl" />
+      <div className="portfolio-glow portfolio-glow-slow absolute right-[-8rem] top-24 h-[28rem] w-[28rem] rounded-full bg-amber-300/15 blur-3xl" />
+      <div className="portfolio-glow portfolio-glow-slow absolute bottom-[-10rem] left-1/3 h-[30rem] w-[30rem] rounded-full bg-blue-500/15 blur-3xl" />
+      <div className="portfolio-dot absolute left-[12%] top-[22%] h-2 w-2 rounded-full bg-cyan-200/25 shadow-[0_0_24px_rgba(34,211,238,0.35)]" />
+      <div className="portfolio-dot absolute right-[18%] top-[34%] h-1.5 w-1.5 rounded-full bg-amber-200/20 shadow-[0_0_22px_rgba(251,191,36,0.28)]" />
+      <div className="portfolio-dot absolute bottom-[28%] left-[22%] h-1.5 w-1.5 rounded-full bg-cyan-100/20 shadow-[0_0_20px_rgba(165,243,252,0.28)]" />
+      <div className="portfolio-dot absolute bottom-[18%] right-[28%] h-2 w-2 rounded-full bg-blue-200/15 shadow-[0_0_22px_rgba(147,197,253,0.22)]" />
+    </div>
   );
 }
 
