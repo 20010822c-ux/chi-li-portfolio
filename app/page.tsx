@@ -144,10 +144,13 @@ const navItems = [
   { label: "联系", href: "#联系" },
 ];
 
+const topNavItems = navItems.filter((item) => item.label !== "首页");
+
 export default function Home() {
   return (
     <main className="relative isolate overflow-hidden">
       <BackgroundAnimation />
+      <TopNavigation />
 
       <section id="top" className="relative mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
         <div className="relative flex min-h-[680px] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(34,211,238,0.18),transparent_22rem),radial-gradient(circle_at_82%_20%,rgba(251,146,60,0.16),transparent_24rem),linear-gradient(135deg,#061526_0%,#0b1220_50%,#120d12_100%)] p-5 shadow-[0_35px_110px_rgba(0,0,0,0.5)] sm:rounded-[2.75rem] sm:p-7 lg:h-[720px] lg:p-9">
@@ -232,109 +235,109 @@ export default function Home() {
     <div className="absolute -right-28 top-24 h-72 w-72 rounded-full bg-cyan-300/15 blur-3xl" />
     <div className="absolute -bottom-28 left-12 h-80 w-80 rounded-full bg-orange-400/10 blur-3xl" />
 
-    <nav className="relative z-20 flex items-center justify-between gap-4">
-      <a href="#top" className="text-sm font-black tracking-tight text-white">
-        ChiLi<span className="text-cyan-200">folio</span>
-      </a>
+```
+<div className="relative z-10 grid min-h-[640px] items-center gap-10 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:pt-8">
+  <div className="max-w-3xl">
+    <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
+      Open to Work
+    </p>
 
-      <div className="hidden items-center gap-7 text-xs font-medium text-white/70 md:flex">
-        {navItems.map((item) => (
-          <a key={item.href} href={item.href} className="transition hover:text-cyan-100">
-            {item.label}
-          </a>
-        ))}
-      </div>
+    <h1 className="text-6xl font-black leading-[0.95] tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
+      李持
+      <span className="mt-2 block text-cyan-100">Chi Li</span>
+    </h1>
+
+    <h2 className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl lg:text-3xl">
+      内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
+    </h2>
+
+    <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+      艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。
+      希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
+    </p>
+
+    <div className="mt-8 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
+      <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
+        <span className="text-slate-500">Email: </span>
+        <span className="font-semibold text-white">lichi2019@163.com</span>
+      </p>
+
+      <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
+        <span className="text-slate-500">Phone: </span>
+        <span className="font-semibold text-white">18566055261</span>
+      </p>
+
+      <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 sm:col-span-2">
+        <span className="text-slate-500">Location: </span>
+        <span className="font-semibold text-white">Suzhou, Jiangsu, China</span>
+      </p>
+    </div>
+
+    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a
+        className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+        href="#项目"
+      >
+        查看项目案例
+      </a>
 
       <a
-        href="#联系"
-        className="rounded-full bg-white/10 px-4 py-2 text-xs font-bold text-white ring-1 ring-white/25 shadow-lg shadow-black/20 transition hover:bg-white/15 hover:ring-cyan-200/40"
+        className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+        href="/resume-chi-li.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        联系我 <span className="ml-1 text-cyan-300">●</span>
+        下载简历
       </a>
-    </nav>
 
-    <div className="relative z-10 grid min-h-[640px] items-center gap-10 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:pt-8">
-      <div className="max-w-3xl">
-        <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-xs font-semibold text-cyan-100">
-          Open to Work｜内容运营 / 项目执行 / AIGC 影像 / 游戏测试
-        </p>
-
-        <h1 className="text-6xl font-black leading-[0.95] tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
-          李持
-          <span className="mt-2 block text-cyan-100">Chi Li</span>
-        </h1>
-
-        <h2 className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl lg:text-3xl">
-          内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
-        </h2>
-
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-          艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。
-希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
-        </p>
-
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a
-            className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-            href="#项目"
-          >
-            查看项目案例
-          </a>
-
-          <a
-            className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-            href="/resume-chi-li.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            下载简历
-          </a>
-
-          <a
-            className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70 focus:outline-none focus:ring-2 focus:ring-amber-300/50"
-            href="#联系"
-          >
-            联系我
-          </a>
-        </div>
-      </div>
-
-      <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-5 lg:items-end">
-        <div className="relative w-full max-w-[295px]">
-          <div className="relative aspect-[295/413] overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-b from-cyan-100/20 via-slate-800/50 to-black/60 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.24),transparent_24%),linear-gradient(180deg,transparent,rgba(3,7,18,0.82))]" />
-
-            <div className="relative flex h-full flex-col items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-100/35 bg-black/10 text-center">
-              <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-100/40 bg-cyan-100/10 text-4xl">
-                人像
-              </div>
-
-              <p className="text-lg font-semibold text-white">求职头像 Placeholder</p>
-
-              <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-200">
-                预留 295 × 413 px 比例，后续可替换为正式证件或职业头像。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="relative z-20 grid gap-3 border-t border-white/10 pt-5 text-xs text-white/70 sm:grid-cols-2 lg:grid-cols-4">
-      {[
-        ["01", "项目执行"],
-        ["02", "内容制作"],
-        ["03", "AIGC 影像"],
-        ["04", "游戏与电竞内容"],
-      ].map(([number, label]) => (
-        <div key={number} className="rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
-          <p className="font-bold text-cyan-100">#{number}</p>
-          <p className="mt-2 font-medium text-white">{label}</p>
-        </div>
-      ))}
+      <a
+        className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70 focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+        href="#联系"
+      >
+        联系我
+      </a>
     </div>
   </div>
+
+  <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-5 lg:items-end">
+    <div className="relative w-full max-w-[295px]">
+      <div className="relative aspect-[295/413] overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-b from-cyan-100/20 via-slate-800/50 to-black/60 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.24),transparent_24%),linear-gradient(180deg,transparent,rgba(3,7,18,0.82))]" />
+
+        <div className="relative flex h-full flex-col items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-100/35 bg-black/10 text-center">
+          <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-100/40 bg-cyan-100/10 text-4xl">
+            人像
+          </div>
+
+          <p className="text-lg font-semibold text-white">求职头像 Placeholder</p>
+
+          <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-200">
+            预留 295 × 413 px 比例，后续可替换为正式证件或职业头像。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="relative z-20 grid gap-3 border-t border-white/10 pt-5 text-xs text-white/70 sm:grid-cols-2 lg:grid-cols-4">
+  {[
+    ["01", "项目执行"],
+    ["02", "内容制作"],
+    ["03", "AIGC 影像"],
+    ["04", "游戏与电竞内容"],
+  ].map(([number, label]) => (
+    <div key={number} className="rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
+      <p className="font-bold text-cyan-100">#{number}</p>
+      <p className="mt-2 font-medium text-white">{label}</p>
+    </div>
+  ))}
+</div>
+```
+
+  </div>
 </section>
+
           </div>
         </div>
       </section>
@@ -471,6 +474,32 @@ export default function Home() {
         </div>
       </section>
     </main>
+  );
+}
+
+function TopNavigation() {
+  return (
+    <header className="sticky top-4 z-50 mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8">
+      <nav className="flex items-center justify-between gap-4 rounded-full border border-white/10 bg-slate-950/60 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-md sm:px-5">
+        <a href="#top" className="shrink-0 text-sm font-black tracking-tight text-white transition hover:text-cyan-200">
+          ChiLi-LC
+        </a>
+        <div className="hidden items-center gap-6 text-sm font-semibold text-slate-300 md:flex">
+          {topNavItems.map((item) => (
+            <a key={item.href} href={item.href} className="transition hover:text-cyan-200">
+              {item.label}
+            </a>
+          ))}
+        </div>
+        <a
+          className="shrink-0 rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+          href="/resume-chi-li.pdf"
+          download
+        >
+          下载简历
+        </a>
+      </nav>
+    </header>
   );
 }
 
