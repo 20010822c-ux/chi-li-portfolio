@@ -15,6 +15,7 @@ const projects = [
     ],
     result:
       "形成可展示的校园商业创新方案，提升了跨部门沟通、项目排期与商业表达能力。",
+    link: "https://canva.link/v12n80tfay5pjda",
   },
   {
     name: "腾讯广告 × XJTLU AI 漫剧创意大赛",
@@ -29,6 +30,7 @@ const projects = [
     ],
     result:
       "作品入围优秀作品奖，验证了个人从创意到交付的 AIGC 影像制作能力。",
+    link: "https://www.bilibili.com/video/BV1PsJw6YE1z/",
   },
   {
     name: "商业创意实践与展览执行项目",
@@ -43,6 +45,7 @@ const projects = [
     ],
     result:
       "支撑展览顺利落地，沉淀了财务记录、现场执行和跨角色协同经验。",
+    link: "https://chi-li-lc.feishu.cn/wiki/J3SjwuO3xiZSeakdC06cMp86nIh?from=from_copylink",
   },
   {
     name: "Lucid Knight 毕业设计作品",
@@ -57,6 +60,7 @@ const projects = [
     ],
     result:
       "作品获学院 The Visionary Gesture Award，体现了独立创作与长期项目管理能力。",
+    link: "https://www.bilibili.com/video/BV1qU5X6nEXH/",
   },
   {
     name: "TC-Monopoly 桌游测试与宣发项目",
@@ -346,42 +350,59 @@ export default function Home() {
       <section id="项目" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Selected Work" title="核心项目" />
         <div className="grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
-            <SpotlightCard key={project.name} spotlightColor="rgba(34, 211, 238, 0.16)" className="group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)]">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <p className="text-sm font-medium text-cyan-200">{project.time}</p>
-                  <h3 className="mt-2 text-2xl font-bold text-white">{project.name}</h3>
-                </div>
-                <span className="rounded-full border border-cyan-200/25 bg-cyan-200/10 px-3 py-1 text-sm text-cyan-100">
-                  {project.role}
-                </span>
-              </div>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
-                    {tag}
+          {projects.map((project) => {
+            const projectCard = (
+              <SpotlightCard
+                key={project.name}
+                spotlightColor="rgba(34, 211, 238, 0.16)"
+                className={`group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link ? "cursor-pointer" : ""}`}
+              >
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-cyan-200">{project.time}</p>
+                    <h3 className="mt-2 text-2xl font-bold text-white">{project.name}</h3>
+                  </div>
+                  <span className="rounded-full border border-cyan-200/25 bg-cyan-200/10 px-3 py-1 text-sm text-cyan-100">
+                    {project.role}
                   </span>
-                ))}
-              </div>
-              <p className="mt-5 leading-7 text-slate-300">{project.summary}</p>
-              <div className="mt-5 rounded-2xl border border-white/10 bg-black/15 p-4">
-                <h4 className="font-semibold text-slate-100">我的工作</h4>
-                <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
-                  {project.work.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                      <span>{item}</span>
-                    </li>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
+                      {tag}
+                    </span>
                   ))}
-                </ul>
-              </div>
-              <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
-                <span className="font-semibold text-cyan-100">项目成果：</span>
-                {project.result}
-              </p>
-            </SpotlightCard>
-          ))}
+                </div>
+                <p className="mt-5 leading-7 text-slate-300">{project.summary}</p>
+                <div className="mt-5 rounded-2xl border border-white/10 bg-black/15 p-4">
+                  <h4 className="font-semibold text-slate-100">我的工作</h4>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+                    {project.work.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
+                  <span className="font-semibold text-cyan-100">项目成果：</span>
+                  {project.result}
+                </p>
+                {project.link ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
+              </SpotlightCard>
+            );
+
+            if (project.link) {
+              return (
+                <a key={project.name} href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                  {projectCard}
+                </a>
+              );
+            }
+
+            return projectCard;
+          })}
         </div>
       </section>
 
