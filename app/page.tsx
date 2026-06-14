@@ -187,6 +187,33 @@ const skills = [
   },
 ];
 
+const personalInterests = [
+  {
+    title: "游戏与电竞内容",
+    description:
+      "长期关注 FPS 与战术竞技类游戏，持续观看无畏契约 VCT CN 赛事，了解职业赛事节奏、战队内容语境与玩家社区讨论方式。",
+    icon: "◎",
+    iconClass: "border-cyan-200/20 bg-cyan-300/10 text-cyan-100",
+    spotlightColor: "rgba(34, 211, 238, 0.10)",
+  },
+  {
+    title: "微缩模型制作",
+    description:
+      "平时喜欢制作微缩模型，享受从组装、上色到细节调整的过程，也会特别关注材质表现、造型设计和手工完成度。",
+    icon: "🛠️",
+    iconClass: "border-amber-200/20 bg-amber-300/10 text-amber-100",
+    spotlightColor: "rgba(251, 191, 36, 0.10)",
+  },
+  {
+    title: "健身与阅读",
+    description:
+      "平时会通过健身保持状态，也有阅读习惯。一个帮助我保持稳定节奏，一个帮助我持续输入新内容和新想法。",
+    icon: "📚",
+    iconClass: "border-violet-200/20 bg-violet-300/10 text-violet-100",
+    spotlightColor: "rgba(196, 181, 253, 0.10)",
+  },
+];
+
 const awards = [
   "2024/25 学年 XJTLU Academic Achievement Award",
   "腾讯广告 × XJTLU AI 漫剧创意大赛入围优秀作品奖",
@@ -430,20 +457,26 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-10 max-w-2xl">
+        <div className="mt-10">
           <div className="mb-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/70">Personal Interest</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/70">Personal Interests</p>
             <h3 className="mt-2 text-2xl font-bold text-white">个人兴趣</h3>
           </div>
-          <SpotlightCard
-            spotlightColor="rgba(251, 191, 36, 0.10)"
-            className="rounded-[1.25rem] border border-white/10 bg-white/[0.025] p-5 shadow-lg shadow-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/[0.04]"
-          >
-            <h4 className="text-lg font-semibold text-cyan-50">游戏与电竞内容</h4>
-            <p className="mt-3 leading-7 text-slate-400">
-              长期关注 FPS 与战术竞技类游戏，持续观看无畏契约 VCT CN 赛事，了解职业赛事节奏、战队内容语境与玩家社区讨论方式。
-            </p>
-          </SpotlightCard>
+          <div className="grid items-stretch gap-4 md:grid-cols-3">
+            {personalInterests.map((interest) => (
+              <SpotlightCard
+                key={interest.title}
+                spotlightColor={interest.spotlightColor}
+                className="flex h-full flex-col rounded-[1.25rem] border border-white/10 bg-white/[0.025] p-5 shadow-lg shadow-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.045]"
+              >
+                <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border text-xl ${interest.iconClass}`}>
+                  {interest.icon}
+                </div>
+                <h4 className="text-base font-bold text-white">{interest.title}</h4>
+                <p className="mt-3 text-sm leading-6 text-slate-400">{interest.description}</p>
+              </SpotlightCard>
+            ))}
+          </div>
         </div>
       </section>
 
