@@ -192,7 +192,7 @@ const personalInterests = [
     title: "游戏与电竞内容",
     description:
       "长期关注 FPS 与战术竞技类游戏，持续观看无畏契约 VCT CN 赛事，了解职业赛事节奏、战队内容语境与玩家社区讨论方式。",
-    icon: "◎",
+    icon: "🎮",
     iconClass: "border-cyan-200/20 bg-cyan-300/10 text-cyan-100",
     spotlightColor: "rgba(34, 211, 238, 0.10)",
   },
