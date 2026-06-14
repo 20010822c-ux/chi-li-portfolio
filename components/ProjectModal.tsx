@@ -39,7 +39,7 @@ export default function ProjectModal({ children, modal }: ProjectModalProps) {
 
   return (
     <>
-      <button type="button" className="block w-full cursor-pointer border-0 bg-transparent p-0 text-left text-inherit" onClick={() => setIsOpen(true)}>
+      <button type="button" className="block h-full w-full cursor-pointer border-0 bg-transparent p-0 text-left text-inherit" onClick={() => setIsOpen(true)}>
         {children}
       </button>
 

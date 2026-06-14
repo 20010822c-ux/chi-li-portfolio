@@ -299,48 +299,50 @@ export default function Home() {
 
       <section id="项目" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Selected Work" title="核心项目" />
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid items-stretch gap-6 lg:grid-cols-2">
           {projects.map((project) => {
             const projectCard = (
               <SpotlightCard
                 key={project.name}
                 spotlightColor="rgba(34, 211, 238, 0.16)"
-                className={`group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link || project.modal ? "cursor-pointer" : ""}`}
+                className={`group flex h-full min-h-[460px] flex-col rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link || project.modal ? "cursor-pointer" : ""}`}
               >
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-cyan-200">{project.time}</p>
-                    <h3 className="mt-2 text-2xl font-bold text-white">{project.name}</h3>
-                  </div>
-                  <span className="rounded-full border border-cyan-200/25 bg-cyan-200/10 px-3 py-1 text-sm text-cyan-100">
-                    {project.role}
-                  </span>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
-                      {tag}
+                <div className="flex-1">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium text-cyan-200">{project.time}</p>
+                      <h3 className="mt-3 min-h-[4rem] text-2xl font-black leading-tight text-white">{project.name}</h3>
+                    </div>
+                    <span className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 text-xs font-medium text-cyan-50 sm:max-w-[18rem]">
+                      {project.role}
                     </span>
-                  ))}
-                </div>
-                <p className="mt-5 leading-7 text-slate-300">{project.summary}</p>
-                <div className="mt-5 rounded-2xl border border-white/10 bg-black/15 p-4">
-                  <h4 className="font-semibold text-slate-100">我的工作</h4>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
-                    {project.work.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                        <span>{item}</span>
-                      </li>
+                  </div>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
+                  <p className="mt-5 leading-7 text-slate-300">{project.summary}</p>
+                  <div className="mt-5 rounded-2xl border border-white/10 bg-black/15 p-4">
+                    <h4 className="font-semibold text-slate-100">我的工作</h4>
+                    <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+                      {project.work.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
+                    <span className="font-semibold text-cyan-100">项目成果：</span>
+                    {project.result}
+                  </p>
                 </div>
-                <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
-                  <span className="font-semibold text-cyan-100">项目成果：</span>
-                  {project.result}
-                </p>
-                {project.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目展示 ↗</p> : null}
-                {project.link && !project.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
+                {project.modal ? <p className="mt-5 text-xs font-semibold text-cyan-100/80">查看项目展示 ↗</p> : null}
+                {project.link && !project.modal ? <p className="mt-5 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
               </SpotlightCard>
             );
 
@@ -354,7 +356,7 @@ export default function Home() {
 
             if (project.link) {
               return (
-                <a key={project.name} href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                <a key={project.name} href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                   {projectCard}
                 </a>
               );
