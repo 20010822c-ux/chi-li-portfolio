@@ -245,11 +245,25 @@ const personalInterests = [
 ];
 
 const awards = [
-  "2024/25 学年 XJTLU Academic Achievement Award",
-  "腾讯广告 × XJTLU AI 漫剧创意大赛入围优秀作品奖",
-  "Chi Forest × XJTLU 校园商业创新项目 · Final Pitch 第一名",
-  "毕业设计作品获学院 The Visionary Gesture Award",
-  "受邀作为 XJTLU 优秀毕业生接受校方采访",
+  {
+    title: "2024/25 学年 XJTLU Academic Achievement Award",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:d5074211-aa2f-4b75-9069-72c5e50dd2cd",
+  },
+  {
+    title: "腾讯广告 × XJTLU AI 漫剧创意大赛入围优秀作品奖",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:415dcc0f-e136-4f52-bdda-4021cbd6b352",
+  },
+  {
+    title: "Chi Forest × XJTLU 校园商业创新项目 · Final Pitch 第一名",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:eff40f8b-5193-4c13-8f46-861c4e384b2b",
+  },
+  {
+    title: "毕业设计作品获学院 The Visionary Gesture Award",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:bacbbb98-2c46-4fb3-8431-ce9d3c8db280",
+  },
+  {
+    title: "受邀作为 XJTLU 优秀毕业生接受校方采访",
+  },
 ];
 
 type SectionTitleProps = {
@@ -523,12 +537,28 @@ export default function Home() {
         <SectionTitle eyebrow="Awards" title="奖项荣誉" />
         <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 sm:p-8">
           <div className="grid gap-4 md:grid-cols-2">
-            {awards.map((award) => (
-              <SpotlightCard key={award} spotlightColor="rgba(251, 191, 36, 0.14)" className="flex gap-4 rounded-2xl border border-white/10 bg-black/10 p-4">
-                <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.75)]" />
-                <p className="leading-7 text-slate-200">{award}</p>
-              </SpotlightCard>
-            ))}
+            {awards.map((award) => {
+              const awardCard = (
+                <SpotlightCard
+                  spotlightColor="rgba(251, 191, 36, 0.14)"
+                  className={`flex h-full gap-4 rounded-2xl border border-white/10 bg-black/10 p-4 ${award.link ? "cursor-pointer" : ""}`}
+                >
+                  <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.75)]" />
+                  <p className="flex-1 leading-7 text-slate-200">{award.title}</p>
+                  {award.link ? <span className="text-sm font-semibold text-cyan-100/60">↗</span> : null}
+                </SpotlightCard>
+              );
+
+              if (award.link) {
+                return (
+                  <a key={award.title} href={award.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    {awardCard}
+                  </a>
+                );
+              }
+
+              return <div key={award.title}>{awardCard}</div>;
+            })}
           </div>
         </div>
       </section>
