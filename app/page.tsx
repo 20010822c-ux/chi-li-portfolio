@@ -113,6 +113,18 @@ const projects = [
     ],
     result:
       "完成联合展览相关交付，强化了早期项目统筹、沟通协调与文化内容表达能力。",
+    modal: {
+      title: "93号院博物馆联合展览项目",
+      description: "展示该项目在联合展览策划、现场执行、展陈沟通、物料整理、内容呈现与影像记录中的过程材料。",
+      images: [
+        "/projects/no93-museum/01.jpg",
+        "/projects/no93-museum/02.jpg",
+        "/projects/no93-museum/03.jpg",
+        "/projects/no93-museum/04.jpg",
+      ],
+      documentUrl: "https://www.bilibili.com/video/BV1vKqrY6ENM/",
+      documentLabel: "查看项目视频 ↗",
+    },
   },
 ];
 
@@ -123,6 +135,16 @@ const internships = [
     time: "2025.12–2026.02",
     description:
       "负责产品宣传短视频的拍摄构思、素材整理、剪辑调色与基础声效处理，支持企业产品信息以更直观的方式触达客户。",
+    modal: {
+      title: "旺石新材有限公司",
+      description: "展示该实习经历中的短视频制作、素材整理、剪辑调色、基础声效处理与内容发布支持。",
+      images: [
+        "/internships/wangshi/01.jpg",
+        "/internships/wangshi/02.jpg",
+        "/internships/wangshi/03.jpg",
+        "/internships/wangshi/04.jpg",
+      ],
+    },
   },
   {
     company: "赣浔建材有限公司",
@@ -130,6 +152,18 @@ const internships = [
     time: "2024.06–2024.08",
     description:
       "参与客户宣传手册的信息梳理、文案编辑、版面校对与资料整合，提升宣传材料的阅读清晰度与商务沟通效率。",
+    modal: {
+      title: "赣浔建材有限公司",
+      description: "展示该实习经历中的产品图册制作、基础排版、图片整理、宣传物料与内容编辑成果。",
+      images: [
+        "/internships/ganxun/01.jpg",
+        "/internships/ganxun/02.jpg",
+        "/internships/ganxun/03.jpg",
+        "/internships/ganxun/04.jpg",
+      ],
+      documentUrl: "https://book.yunzhan365.com/oopti/kyas/mobile/index.html",
+      documentLabel: "查看作品/材料 ↗",
+    },
   },
 ];
 
@@ -373,48 +407,50 @@ export default function Home() {
 
       <section id="项目" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Selected Work" title="核心项目" />
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid items-stretch gap-6 lg:grid-cols-2">
           {projects.map((project) => {
             const projectCard = (
               <SpotlightCard
                 key={project.name}
                 spotlightColor="rgba(34, 211, 238, 0.16)"
-                className={`group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link || project.modal ? "cursor-pointer" : ""}`}
+                className={`group flex h-full min-h-[460px] flex-col rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link || project.modal ? "cursor-pointer" : ""}`}
               >
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-cyan-200">{project.time}</p>
-                    <h3 className="mt-2 text-2xl font-bold text-white">{project.name}</h3>
-                  </div>
-                  <span className="rounded-full border border-cyan-200/25 bg-cyan-200/10 px-3 py-1 text-sm text-cyan-100">
-                    {project.role}
-                  </span>
-                </div>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
-                      {tag}
+                <div className="flex-1">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium text-cyan-200">{project.time}</p>
+                      <h3 className="mt-3 min-h-[4rem] text-2xl font-black leading-tight text-white">{project.name}</h3>
+                    </div>
+                    <span className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 text-xs font-medium text-cyan-50 sm:max-w-[18rem]">
+                      {project.role}
                     </span>
-                  ))}
-                </div>
-                <p className="mt-5 leading-7 text-slate-300">{project.summary}</p>
-                <div className="mt-5 rounded-2xl border border-white/10 bg-black/15 p-4">
-                  <h4 className="font-semibold text-slate-100">我的工作</h4>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
-                    {project.work.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
-                        <span>{item}</span>
-                      </li>
+                  </div>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
+                  <p className="mt-5 leading-7 text-slate-300">{project.summary}</p>
+                  <div className="mt-5 rounded-2xl border border-white/10 bg-black/15 p-4">
+                    <h4 className="font-semibold text-slate-100">我的工作</h4>
+                    <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+                      {project.work.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
+                    <span className="font-semibold text-cyan-100">项目成果：</span>
+                    {project.result}
+                  </p>
                 </div>
-                <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
-                  <span className="font-semibold text-cyan-100">项目成果：</span>
-                  {project.result}
-                </p>
-                {project.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目展示 ↗</p> : null}
-                {project.link && !project.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
+                {project.modal ? <p className="mt-5 text-xs font-semibold text-cyan-100/80">查看项目展示 ↗</p> : null}
+                {project.link && !project.modal ? <p className="mt-5 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
               </SpotlightCard>
             );
 
@@ -428,7 +464,7 @@ export default function Home() {
 
             if (project.link) {
               return (
-                <a key={project.name} href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                <a key={project.name} href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                   {projectCard}
                 </a>
               );
@@ -442,14 +478,31 @@ export default function Home() {
       <section id="实习" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Experience" title="实习经历" />
         <div className="grid gap-6 md:grid-cols-2">
-          {internships.map((item) => (
-            <SpotlightCard key={item.company} spotlightColor="rgba(34, 211, 238, 0.14)" className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6">
-              <p className="text-sm font-medium text-cyan-200">{item.time}</p>
-              <h3 className="mt-2 text-2xl font-bold text-white">{item.company}</h3>
-              <p className="mt-2 font-semibold text-slate-200">{item.title}</p>
-              <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
-            </SpotlightCard>
-          ))}
+          {internships.map((item) => {
+            const internshipCard = (
+              <SpotlightCard
+                key={item.company}
+                spotlightColor="rgba(34, 211, 238, 0.14)"
+                className={`rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 ${item.modal ? "cursor-pointer" : ""}`}
+              >
+                <p className="text-sm font-medium text-cyan-200">{item.time}</p>
+                <h3 className="mt-2 text-2xl font-bold text-white">{item.company}</h3>
+                <p className="mt-2 font-semibold text-slate-200">{item.title}</p>
+                <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
+                {item.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看实习材料 ↗</p> : null}
+              </SpotlightCard>
+            );
+
+            if (item.modal) {
+              return (
+                <ProjectModal key={item.company} modal={item.modal}>
+                  {internshipCard}
+                </ProjectModal>
+              );
+            }
+
+            return internshipCard;
+          })}
         </div>
       </section>
 
