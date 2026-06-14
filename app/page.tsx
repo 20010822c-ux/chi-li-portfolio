@@ -422,7 +422,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="mt-5 inline-flex w-fit items-center rounded-full border border-cyan-200/30 bg-cyan-300/10 px-4 py-2 text-xs font-semibold text-cyan-100 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
                   >
-                    查看语言证明 ↗
+                    查看语言能力证明
                   </a>
                 ) : null}
               </div>
