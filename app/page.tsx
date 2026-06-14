@@ -1,3 +1,5 @@
+import SpotlightCard from "../components/SpotlightCard";
+
 // Keep the portfolio content in this page so the static Vercel build can render the latest PR layout.
 const projects = [
   {
@@ -345,7 +347,7 @@ export default function Home() {
         <SectionTitle eyebrow="Selected Work" title="核心项目" />
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.name} className="group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)]">
+            <SpotlightCard key={project.name} spotlightColor="rgba(34, 211, 238, 0.16)" className="group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)]">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-sm font-medium text-cyan-200">{project.time}</p>
@@ -378,7 +380,7 @@ export default function Home() {
                 <span className="font-semibold text-cyan-100">项目成果：</span>
                 {project.result}
               </p>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -387,12 +389,12 @@ export default function Home() {
         <SectionTitle eyebrow="Experience" title="实习经历" />
         <div className="grid gap-6 md:grid-cols-2">
           {internships.map((item) => (
-            <article key={item.company} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6">
+            <SpotlightCard key={item.company} spotlightColor="rgba(34, 211, 238, 0.14)" className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6">
               <p className="text-sm font-medium text-cyan-200">{item.time}</p>
               <h3 className="mt-2 text-2xl font-bold text-white">{item.company}</h3>
               <p className="mt-2 font-semibold text-slate-200">{item.title}</p>
               <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -417,10 +419,10 @@ export default function Home() {
         <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 sm:p-8">
           <div className="grid gap-4 md:grid-cols-2">
             {awards.map((award) => (
-              <div key={award} className="flex gap-4 rounded-2xl border border-white/10 bg-black/10 p-4">
+              <SpotlightCard key={award} spotlightColor="rgba(251, 191, 36, 0.14)" className="flex gap-4 rounded-2xl border border-white/10 bg-black/10 p-4">
                 <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.75)]" />
                 <p className="leading-7 text-slate-200">{award}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
