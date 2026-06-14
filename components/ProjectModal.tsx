@@ -8,7 +8,8 @@ type ProjectModalData = {
   title: string;
   description: string;
   images: string[];
-  documentUrl: string;
+  documentUrl?: string;
+  documentLabel?: string;
 };
 
 type ProjectModalProps = {
@@ -96,17 +97,19 @@ export default function ProjectModal({ children, modal }: ProjectModalProps) {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm text-slate-400">点击下方按钮查看完整项目文档材料。</p>
-              <a
-                className="rounded-full bg-cyan-300 px-5 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-                href={modal.documentUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                查看项目文档 ↗
-              </a>
-            </div>
+            {modal.documentUrl ? (
+              <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-slate-400">点击下方按钮查看完整项目文档材料。</p>
+                <a
+                  className="rounded-full bg-cyan-300 px-5 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+                  href={modal.documentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {modal.documentLabel ?? "查看项目文档 ↗"}
+                </a>
+              </div>
+            ) : null}
           </div>
         </div>
       ) : null}

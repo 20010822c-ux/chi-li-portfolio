@@ -123,6 +123,16 @@ const internships = [
     time: "2025.12–2026.02",
     description:
       "负责产品宣传短视频的拍摄构思、素材整理、剪辑调色与基础声效处理，支持企业产品信息以更直观的方式触达客户。",
+    modal: {
+      title: "旺石新材有限公司",
+      description: "展示该实习经历中的短视频制作、素材整理、剪辑调色、基础声效处理与内容发布支持。",
+      images: [
+        "/internships/wangshi/01.jpg",
+        "/internships/wangshi/02.jpg",
+        "/internships/wangshi/03.jpg",
+        "/internships/wangshi/04.jpg",
+      ],
+    },
   },
   {
     company: "赣浔建材有限公司",
@@ -130,7 +140,18 @@ const internships = [
     time: "2024.06–2024.08",
     description:
       "参与客户宣传手册的信息梳理、文案编辑、版面校对与资料整合，提升宣传材料的阅读清晰度与商务沟通效率。",
-    link: "https://book.yunzhan365.com/bookcase/bdko/index.html",
+    modal: {
+      title: "赣浔建材有限公司",
+      description: "展示该实习经历中的产品图册制作、基础排版、图片整理、宣传物料与内容编辑成果。",
+      images: [
+        "/internships/ganxun/01.jpg",
+        "/internships/ganxun/02.jpg",
+        "/internships/ganxun/03.jpg",
+        "/internships/ganxun/04.jpg",
+      ],
+      documentUrl: "https://book.yunzhan365.com/oopti/kyas/mobile/index.html",
+      documentLabel: "查看作品/材料 ↗",
+    },
   },
 ];
 
@@ -340,21 +361,21 @@ export default function Home() {
               <SpotlightCard
                 key={item.company}
                 spotlightColor="rgba(34, 211, 238, 0.14)"
-                className={`rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 ${item.link ? "cursor-pointer" : ""}`}
+                className={`rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6 ${item.modal ? "cursor-pointer" : ""}`}
               >
                 <p className="text-sm font-medium text-cyan-200">{item.time}</p>
                 <h3 className="mt-2 text-2xl font-bold text-white">{item.company}</h3>
                 <p className="mt-2 font-semibold text-slate-200">{item.title}</p>
                 <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
-                {item.link ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看作品/材料 ↗</p> : null}
+                {item.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看实习材料 ↗</p> : null}
               </SpotlightCard>
             );
 
-            if (item.link) {
+            if (item.modal) {
               return (
-                <a key={item.company} href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                <ProjectModal key={item.company} modal={item.modal}>
                   {internshipCard}
-                </a>
+                </ProjectModal>
               );
             }
 
