@@ -113,6 +113,18 @@ const projects = [
     ],
     result:
       "完成联合展览相关交付，强化了早期项目统筹、沟通协调与文化内容表达能力。",
+    modal: {
+      title: "93号院博物馆联合展览项目",
+      description: "展示该项目在联合展览策划、现场执行、展陈沟通、物料整理、内容呈现与影像记录中的过程材料。",
+      images: [
+        "/projects/no93-museum/01.jpg",
+        "/projects/no93-museum/02.jpg",
+        "/projects/no93-museum/03.jpg",
+        "/projects/no93-museum/04.jpg",
+      ],
+      documentUrl: "https://www.bilibili.com/video/BV1vKqrY6ENM/",
+      documentLabel: "查看项目视频 ↗",
+    },
   },
 ];
 
