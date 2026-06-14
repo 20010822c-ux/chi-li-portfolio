@@ -195,6 +195,16 @@ const personalInterests = [
     icon: "🎮",
     iconClass: "border-cyan-200/20 bg-cyan-300/10 text-cyan-100",
     spotlightColor: "rgba(34, 211, 238, 0.10)",
+    modal: {
+      title: "游戏与电竞内容",
+      description: "展示与游戏、电竞赛事观看、玩家社区观察和内容兴趣相关的图片材料。",
+      images: [
+        "/interests/gaming-esports/01.jpg",
+        "/interests/gaming-esports/02.jpg",
+        "/interests/gaming-esports/03.jpg",
+        "/interests/gaming-esports/04.jpg",
+      ],
+    },
   },
   {
     title: "微缩模型制作",
@@ -203,6 +213,16 @@ const personalInterests = [
     icon: "🛠️",
     iconClass: "border-amber-200/20 bg-amber-300/10 text-amber-100",
     spotlightColor: "rgba(251, 191, 36, 0.10)",
+    modal: {
+      title: "微缩模型制作",
+      description: "展示微缩模型制作、组装、上色、材质表现和细节调整过程相关图片。",
+      images: [
+        "/interests/miniature-models/01.jpg",
+        "/interests/miniature-models/02.jpg",
+        "/interests/miniature-models/03.jpg",
+        "/interests/miniature-models/04.jpg",
+      ],
+    },
   },
   {
     title: "健身与阅读",
@@ -211,6 +231,16 @@ const personalInterests = [
     icon: "📚",
     iconClass: "border-violet-200/20 bg-violet-300/10 text-violet-100",
     spotlightColor: "rgba(196, 181, 253, 0.10)",
+    modal: {
+      title: "健身与阅读",
+      description: "展示健身、阅读、日常记录和个人状态管理相关图片。",
+      images: [
+        "/interests/fitness-reading/01.jpg",
+        "/interests/fitness-reading/02.jpg",
+        "/interests/fitness-reading/03.jpg",
+        "/interests/fitness-reading/04.jpg",
+      ],
+    },
   },
 ];
 
@@ -463,19 +493,27 @@ export default function Home() {
             <h3 className="mt-2 text-2xl font-bold text-white">个人兴趣</h3>
           </div>
           <div className="grid items-stretch gap-4 md:grid-cols-3">
-            {personalInterests.map((interest) => (
-              <SpotlightCard
-                key={interest.title}
-                spotlightColor={interest.spotlightColor}
-                className="flex h-full flex-col rounded-[1.25rem] border border-white/10 bg-white/[0.025] p-5 shadow-lg shadow-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.045]"
-              >
-                <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border text-xl ${interest.iconClass}`}>
-                  {interest.icon}
-                </div>
-                <h4 className="text-base font-bold text-white">{interest.title}</h4>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{interest.description}</p>
-              </SpotlightCard>
-            ))}
+            {personalInterests.map((interest) => {
+              const interestCard = (
+                <SpotlightCard
+                  spotlightColor={interest.spotlightColor}
+                  className="flex h-full flex-col rounded-[1.25rem] border border-white/10 bg-white/[0.025] p-5 shadow-lg shadow-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.045]"
+                >
+                  <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border text-xl ${interest.iconClass}`}>
+                    {interest.icon}
+                  </div>
+                  <h4 className="text-base font-bold text-white">{interest.title}</h4>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-400">{interest.description}</p>
+                  <p className="mt-4 text-xs font-semibold text-cyan-100/75">查看兴趣图组 ↗</p>
+                </SpotlightCard>
+              );
+
+              return (
+                <ProjectModal key={interest.title} modal={interest.modal}>
+                  {interestCard}
+                </ProjectModal>
+              );
+            })}
           </div>
         </div>
       </section>
