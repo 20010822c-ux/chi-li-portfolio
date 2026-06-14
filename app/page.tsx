@@ -247,6 +247,7 @@ const personalInterests = [
 const awards = [
   "2024/25 学年 XJTLU Academic Achievement Award",
   "腾讯广告 × XJTLU AI 漫剧创意大赛入围优秀作品奖",
+  "Chi-Forest Team 11 · ENT301TC Final Pitch 第一名",
   "毕业设计作品获学院 The Visionary Gesture Award",
   "受邀作为 XJTLU 优秀毕业生接受校方采访",
 ];
