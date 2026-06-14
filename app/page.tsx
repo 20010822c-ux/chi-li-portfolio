@@ -402,13 +402,17 @@ export default function Home() {
         <SectionTitle eyebrow="Capabilities" title="核心能力" />
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {skills.map((skill, index) => (
-            <article key={skill.title} className="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-cyan-300/[0.04] p-6">
+            <SpotlightCard
+              key={skill.title}
+              spotlightColor="rgba(34, 211, 238, 0.14)"
+              className="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-cyan-300/[0.04] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-white/[0.07] hover:shadow-[0_18px_70px_rgba(34,211,238,0.10)]"
+            >
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/15 text-lg font-bold text-cyan-100">
                 0{index + 1}
               </div>
               <h3 className="text-xl font-bold text-white">{skill.title}</h3>
               <p className="mt-4 leading-7 text-slate-300">{skill.description}</p>
-            </article>
+            </SpotlightCard>
           ))}
         </div>
 
@@ -417,12 +421,15 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/70">Personal Interest</p>
             <h3 className="mt-2 text-2xl font-bold text-white">个人兴趣</h3>
           </div>
-          <article className="rounded-[1.25rem] border border-white/10 bg-white/[0.025] p-5 shadow-lg shadow-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-cyan-200/25 hover:bg-white/[0.04]">
+          <SpotlightCard
+            spotlightColor="rgba(251, 191, 36, 0.10)"
+            className="rounded-[1.25rem] border border-white/10 bg-white/[0.025] p-5 shadow-lg shadow-black/10 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-amber-200/25 hover:bg-white/[0.04]"
+          >
             <h4 className="text-lg font-semibold text-cyan-50">游戏与电竞内容</h4>
             <p className="mt-3 leading-7 text-slate-400">
-              长期关注竞技类游戏、电竞赛事内容与玩家社区讨论，理解游戏内容传播中的节奏、话题与受众兴趣。该部分作为求职方向的兴趣补充，而不是硬性技能展示。
+              长期关注 FPS 与战术竞技类游戏，持续观看无畏契约 VCT CN 赛事，了解职业赛事节奏、战队内容语境与玩家社区讨论方式。
             </p>
-          </article>
+          </SpotlightCard>
         </div>
       </section>
 
