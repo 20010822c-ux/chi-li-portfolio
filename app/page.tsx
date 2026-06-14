@@ -405,13 +405,27 @@ export default function Home() {
             <SpotlightCard
               key={skill.title}
               spotlightColor="rgba(34, 211, 238, 0.14)"
-              className="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-cyan-300/[0.04] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-white/[0.07] hover:shadow-[0_18px_70px_rgba(34,211,238,0.10)]"
+              className="h-full rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-cyan-300/[0.04] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-white/[0.07] hover:shadow-[0_18px_70px_rgba(34,211,238,0.10)]"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/15 text-lg font-bold text-cyan-100">
-                0{index + 1}
+              <div className="flex h-full flex-col">
+                <div className="flex-1">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/15 text-lg font-bold text-cyan-100">
+                    0{index + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{skill.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-300">{skill.description}</p>
+                </div>
+                {skill.title === "语言能力" ? (
+                  <a
+                    href="/language-proof.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex w-fit items-center rounded-full border border-cyan-200/30 bg-cyan-300/10 px-4 py-2 text-xs font-semibold text-cyan-100 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+                  >
+                    查看语言证明 ↗
+                  </a>
+                ) : null}
               </div>
-              <h3 className="text-xl font-bold text-white">{skill.title}</h3>
-              <p className="mt-4 leading-7 text-slate-300">{skill.description}</p>
             </SpotlightCard>
           ))}
         </div>
