@@ -2,24 +2,23 @@
 
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
-type TCMonopolyModalProps = {
-  children: ReactNode;
+type ProjectModalData = {
+  title: string;
+  description: string;
+  images: string[];
+  documentUrl: string;
 };
 
-const projectImages = [
-  "/projects/tc-monopoly/01.jpg",
-  "/projects/tc-monopoly/02.jpg",
-  "/projects/tc-monopoly/03.jpg",
-  "/projects/tc-monopoly/04.jpg",
-];
+type ProjectModalProps = {
+  children: ReactNode;
+  modal: ProjectModalData;
+};
 
-const documentUrl =
-  "https://1drv.ms/w/c/0004aac69e2d66bb/IQBkiVu9WPBFRYShBIuPKRp1AZOr8ru9K_bsz2ZSBzrWhS4?e=K8IzFX";
-
-export default function TCMonopolyModal({ children }: TCMonopolyModalProps) {
+export default function ProjectModal({ children, modal }: ProjectModalProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const titleId = useId();
 
   useEffect(() => {
     if (!isOpen) {
@@ -52,23 +51,21 @@ export default function TCMonopolyModal({ children }: TCMonopolyModalProps) {
             className="max-h-[86vh] w-full max-w-5xl overflow-y-auto rounded-[2rem] border border-cyan-200/20 bg-slate-950/95 p-5 shadow-[0_30px_120px_rgba(0,0,0,0.65)] sm:p-7"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="tc-monopoly-modal-title"
+            aria-labelledby={titleId}
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-5">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Project Showcase</p>
-                <h2 id="tc-monopoly-modal-title" className="mt-3 text-2xl font-bold text-white sm:text-3xl">
-                  TC-Monopoly 桌游测试与宣发项目
+                <h2 id={titleId} className="mt-3 text-2xl font-bold text-white sm:text-3xl">
+                  {modal.title}
                 </h2>
-                <p className="mt-4 max-w-3xl leading-7 text-slate-300">
-                  展示该项目的桌游测试、用户反馈收集、宣发物料和项目文档材料。
-                </p>
+                <p className="mt-4 max-w-3xl leading-7 text-slate-300">{modal.description}</p>
               </div>
               <button
                 type="button"
                 className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-bold text-slate-200 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-cyan-200/40 hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-                aria-label="关闭 TC-Monopoly 项目展示"
+                aria-label={`关闭 ${modal.title} 项目展示`}
                 onClick={() => setIsOpen(false)}
               >
                 ✕
@@ -76,7 +73,7 @@ export default function TCMonopolyModal({ children }: TCMonopolyModalProps) {
             </div>
 
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              {projectImages.map((src, index) => (
+              {modal.images.map((src, index) => (
                 <div
                   key={src}
                   className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl shadow-black/20"
@@ -87,7 +84,7 @@ export default function TCMonopolyModal({ children }: TCMonopolyModalProps) {
                   </div>
                   <Image
                     src={src}
-                    alt={`TC-Monopoly 项目展示图 ${index + 1}`}
+                    alt={`${modal.title} 项目展示图 ${index + 1}`}
                     fill
                     sizes="(min-width: 640px) 50vw, 100vw"
                     className="relative z-10 object-cover opacity-90 transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:opacity-100"
@@ -103,7 +100,7 @@ export default function TCMonopolyModal({ children }: TCMonopolyModalProps) {
               <p className="text-sm text-slate-400">点击下方按钮查看完整项目文档材料。</p>
               <a
                 className="rounded-full bg-cyan-300 px-5 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-                href={documentUrl}
+                href={modal.documentUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >

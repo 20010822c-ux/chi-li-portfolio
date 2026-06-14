@@ -1,5 +1,5 @@
 import SpotlightCard from "../components/SpotlightCard";
-import TCMonopolyModal from "../components/TCMonopolyModal";
+import ProjectModal from "../components/ProjectModal";
 
 // Keep the portfolio content in this page so the static Vercel build can render the latest PR layout.
 const projects = [
@@ -46,7 +46,18 @@ const projects = [
     ],
     result:
       "支撑展览顺利落地，沉淀了财务记录、现场执行和跨角色协同经验。",
-    link: "https://chi-li-lc.feishu.cn/wiki/J3SjwuO3xiZSeakdC06cMp86nIh?from=from_copylink",
+    modal: {
+      title: "商业创意实践与展览执行项目",
+      description:
+        "展示该项目在商业创意实践、展览执行、预算管理、跨部门沟通、物料跟进与现场协调中的过程材料。",
+      images: [
+        "/projects/exhibition-execution/01.jpg",
+        "/projects/exhibition-execution/02.jpg",
+        "/projects/exhibition-execution/03.jpg",
+        "/projects/exhibition-execution/04.jpg",
+      ],
+      documentUrl: "https://chi-li-lc.feishu.cn/wiki/J3SjwuO3xiZSeakdC06cMp86nIh?from=from_copylink",
+    },
   },
   {
     name: "Lucid Knight 毕业设计作品",
@@ -76,6 +87,18 @@ const projects = [
     ],
     result:
       "帮助团队发现并汇总体验问题，积累了游戏测试、玩家视角分析与内容宣发经验。",
+    modal: {
+      title: "TC-Monopoly 桌游测试与宣发项目",
+      description: "展示该项目的桌游测试、用户反馈收集、宣发物料和项目文档材料。",
+      images: [
+        "/projects/tc-monopoly/01.jpg",
+        "/projects/tc-monopoly/02.jpg",
+        "/projects/tc-monopoly/03.jpg",
+        "/projects/tc-monopoly/04.jpg",
+      ],
+      documentUrl:
+        "https://1drv.ms/w/c/0004aac69e2d66bb/IQBkiVu9WPBFRYShBIuPKRp1AZOr8ru9K_bsz2ZSBzrWhS4?e=K8IzFX",
+    },
   },
   {
     name: "93号院博物馆联合展览项目",
@@ -248,7 +271,7 @@ export default function Home() {
               <SpotlightCard
                 key={project.name}
                 spotlightColor="rgba(34, 211, 238, 0.16)"
-                className={`group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link || project.name === "TC-Monopoly 桌游测试与宣发项目" ? "cursor-pointer" : ""}`}
+                className={`group rounded-[1.75rem] border border-white/10 bg-[rgba(10,22,34,0.72)] p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-[rgba(12,30,44,0.82)] ${project.link || project.modal ? "cursor-pointer" : ""}`}
               >
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
@@ -282,15 +305,17 @@ export default function Home() {
                   <span className="font-semibold text-cyan-100">项目成果：</span>
                   {project.result}
                 </p>
-                {project.name === "TC-Monopoly 桌游测试与宣发项目" ? (
-                  <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目展示 ↗</p>
-                ) : null}
-                {project.link ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
+                {project.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目展示 ↗</p> : null}
+                {project.link && !project.modal ? <p className="mt-4 text-xs font-semibold text-cyan-100/80">查看项目 ↗</p> : null}
               </SpotlightCard>
             );
 
-            if (project.name === "TC-Monopoly 桌游测试与宣发项目") {
-              return <TCMonopolyModal key={project.name}>{projectCard}</TCMonopolyModal>;
+            if (project.modal) {
+              return (
+                <ProjectModal key={project.name} modal={project.modal}>
+                  {projectCard}
+                </ProjectModal>
+              );
             }
 
             if (project.link) {
