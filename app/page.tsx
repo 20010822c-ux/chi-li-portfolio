@@ -1,5 +1,6 @@
 import SpotlightCard from "../components/SpotlightCard";
 import ProjectModal from "../components/ProjectModal";
+import MotionReveal from "../components/MotionReveal";
 
 // Keep the portfolio content in this page so the static Vercel build can render the latest PR layout.
 const projects = [
@@ -297,49 +298,59 @@ export default function Home() {
           <div className="relative z-10 flex w-full flex-col justify-between gap-8">
             <div className="grid flex-1 items-center gap-10 pt-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.78fr)] lg:gap-12 lg:pt-0">
               <div className="max-w-3xl">
-                <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100 shadow-lg shadow-black/10 backdrop-blur">
-                  <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_16px_rgba(110,231,183,0.85)]" />
-                  Open to Work
-                </div>
+                <MotionReveal delay={0.08} y={18} scale={1} className="mb-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100 shadow-lg shadow-black/10 backdrop-blur">
+                    <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_16px_rgba(110,231,183,0.85)]" />
+                    Open to Work
+                  </div>
+                </MotionReveal>
 
-                <h1 className="text-[clamp(2.5rem,9vw,5.8rem)] font-black leading-[0.95] tracking-[-0.06em] text-white">
-                  李持
-                  <span className="mt-2 block text-[0.72em] tracking-[-0.045em] text-cyan-100">Chi Li</span>
-                </h1>
+                <MotionReveal delay={0.18} duration={1} y={36} scale={1}>
+                  <h1 className="text-[clamp(2.5rem,9vw,5.8rem)] font-black leading-[0.95] tracking-[-0.06em] text-white">
+                    李持
+                    <span className="mt-2 block text-[0.72em] tracking-[-0.045em] text-cyan-100">Chi Li</span>
+                  </h1>
+                </MotionReveal>
 
-                <h2 className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl lg:text-[1.7rem]">
-                  内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
-                </h2>
-                <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-                  艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
-                </p>
-
-                <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
-                  <a className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/35 hover:text-cyan-100" href="mailto:lichi2019@163.com">
-                    <span className="text-slate-500">Email: </span>lichi2019@163.com
-                  </a>
-                  <a className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/35 hover:text-cyan-100" href="tel:18566055261">
-                    <span className="text-slate-500">Phone: </span>18566055261
-                  </a>
-                  <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 sm:col-span-2">
-                    <span className="text-slate-500">Location: </span>Suzhou, Jiangsu, China
+                <MotionReveal delay={0.32} y={28} scale={1}>
+                  <h2 className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl lg:text-[1.7rem]">
+                    内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
+                  </h2>
+                  <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+                    艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
                   </p>
-                </div>
+                </MotionReveal>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30" href="#项目">
-                    查看项目案例
-                  </a>
-                  <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70" href="/resume-chi-li.pdf" download>
-                    下载简历
-                  </a>
-                  <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70" href="#联系">
-                    联系我
-                  </a>
-                </div>
+                <MotionReveal delay={0.46} y={26} className="mt-7">
+                  <div className="grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+                    <a className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/35 hover:text-cyan-100" href="mailto:lichi2019@163.com">
+                      <span className="text-slate-500">Email: </span>lichi2019@163.com
+                    </a>
+                    <a className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/35 hover:text-cyan-100" href="tel:18566055261">
+                      <span className="text-slate-500">Phone: </span>18566055261
+                    </a>
+                    <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 sm:col-span-2">
+                      <span className="text-slate-500">Location: </span>Suzhou, Jiangsu, China
+                    </p>
+                  </div>
+                </MotionReveal>
+
+                <MotionReveal delay={0.58} y={24} className="mt-8">
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <a className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30" href="#项目">
+                      查看项目案例
+                    </a>
+                    <a className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70" href="/resume-chi-li.pdf" download>
+                      下载简历
+                    </a>
+                    <a className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70" href="#联系">
+                      联系我
+                    </a>
+                  </div>
+                </MotionReveal>
               </div>
 
-              <div className="flex flex-col items-center gap-5 lg:items-end">
+              <MotionReveal delay={0.35} duration={1} y={24} className="flex flex-col items-center lg:items-end">
                 <div className="relative w-full max-w-[295px] rounded-[2rem] border border-white/15 bg-white/[0.06] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-md">
                   <div className="aspect-[295/413] overflow-hidden rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.18),rgba(15,23,42,0.58)_46%,rgba(2,6,23,0.92))] p-4">
                     <div className="relative flex h-full flex-col items-center justify-center rounded-[1.2rem] border border-dashed border-cyan-100/35 bg-black/10 text-center">
@@ -353,134 +364,28 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </MotionReveal>
             </div>
 
-<section
-  id="top"
-  className="relative mx-auto max-w-7xl px-4 pb-5 pt-24 sm:px-6 lg:px-8 lg:pb-8 lg:pt-28"
->
-  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_18%_18%,rgba(34,211,238,0.18),transparent_24rem),radial-gradient(circle_at_88%_18%,rgba(251,146,60,0.14),transparent_22rem),linear-gradient(135deg,#071923_0%,#0f172a_48%,#120b14_100%)] px-6 py-6 shadow-[0_30px_100px_rgba(0,0,0,0.45)] sm:rounded-[2.5rem] sm:px-8 lg:px-12 lg:py-8">
-    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(34,211,238,0.08)_1px,transparent_1px),linear-gradient(rgba(34,211,238,0.05)_1px,transparent_1px)] bg-[size:64px_64px] opacity-35 [mask-image:radial-gradient(circle_at_center,black,transparent_80%)]" />
-    <div className="absolute -right-28 top-24 h-72 w-72 rounded-full bg-cyan-300/15 blur-3xl" />
-    <div className="absolute -bottom-28 left-12 h-80 w-80 rounded-full bg-orange-400/10 blur-3xl" />
-
-    <div className="relative z-10 grid min-h-[640px] items-center gap-10 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:pt-8">
-      <div className="max-w-3xl">
-        <p className="mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100">
-          Open to Work
-        </p>
-
-        <h1 className="text-6xl font-black leading-[0.95] tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
-          李持
-          <span className="mt-2 block text-cyan-100">Chi Li</span>
-        </h1>
-
-        <h2 className="mt-7 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl lg:text-3xl">
-          内容运营 / 项目执行 / AIGC 影像 / 游戏与电竞内容方向
-        </h2>
-
-        <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-          艺术科技与娱乐专业背景，具备项目执行、跨部门沟通、内容制作、AIGC 影像创作与游戏测试经验。
-          希望将内容制作能力、项目推进经验和游戏/电竞兴趣结合，应用于内容运营、活动执行、项目协调及电竞内容相关岗位。
-        </p>
-
-        <div className="mt-8 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
-          <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-            <span className="text-slate-500">Email: </span>
-            <span className="font-semibold text-white">lichi2019@163.com</span>
-          </p>
-
-          <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-            <span className="text-slate-500">Phone: </span>
-            <span className="font-semibold text-white">18566055261</span>
-          </p>
-
-          <p className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 sm:col-span-2">
-            <span className="text-slate-500">Location: </span>
-            <span className="font-semibold text-white">Suzhou, Jiangsu, China</span>
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a
-            className="rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-            href="#项目"
-          >
-            查看项目案例
-          </a>
-
-          <a
-            className="rounded-full bg-slate-900/60 px-6 py-3 text-center text-sm font-bold text-white ring-1 ring-cyan-200/30 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-300/10 hover:ring-cyan-200/70 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-            href="/resume-chi-li.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            下载简历
-          </a>
-
-          <a
-            className="rounded-full bg-amber-400/10 px-6 py-3 text-center text-sm font-bold text-amber-100 ring-1 ring-amber-300/40 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-amber-400/25 hover:text-white hover:ring-amber-200/70 focus:outline-none focus:ring-2 focus:ring-amber-300/50"
-            href="#联系"
-          >
-            联系我
-          </a>
-        </div>
-      </div>
-
-      <div className="relative mx-auto flex w-full max-w-md flex-col items-center gap-5 lg:items-end">
-        <div className="relative w-full max-w-[295px]">
-          <div className="relative aspect-[295/413] overflow-hidden rounded-[2rem] border border-white/20 bg-gradient-to-b from-cyan-100/20 via-slate-800/50 to-black/60 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.24),transparent_24%),linear-gradient(180deg,transparent,rgba(3,7,18,0.82))]" />
-
-            <div className="relative flex h-full flex-col items-center justify-center rounded-[1.5rem] border border-dashed border-cyan-100/35 bg-black/10 text-center">
-              <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-100/40 bg-cyan-100/10 text-4xl">
-                人像
-              </div>
-
-              <p className="text-lg font-semibold text-white">求职头像 Placeholder</p>
-
-              <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-200">
-                预留 295 × 413 px 比例，后续可替换为正式证件或职业头像。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="relative z-20 grid gap-3 border-t border-white/10 pt-5 text-xs text-white/70 sm:grid-cols-2 lg:grid-cols-4">
-      {[
-        ["01", "项目执行"],
-        ["02", "内容制作"],
-        ["03", "AIGC 影像"],
-        ["04", "游戏与电竞内容"],
-      ].map(([number, label]) => (
-        <div key={number} className="rounded-2xl bg-white/[0.04] p-4 ring-1 ring-white/10">
-          <p className="font-bold text-cyan-100">#{number}</p>
-          <p className="mt-2 font-medium text-white">{label}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
           </div>
         </div>
       </section>
 
       <section id="关于我" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="About" title="关于我" />
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-white/[0.06] hover:shadow-[0_20px_80px_rgba(34,211,238,0.12)] sm:p-8">
-          <p className="max-w-5xl text-lg leading-9 text-slate-200">
-            我是 XJTLU 艺术科技与娱乐专业应届毕业生，本科阶段长期处于全英文授课与跨文化协作环境中。我的项目经历覆盖商业创新、展览执行、AIGC 影像创作、短视频制作与游戏测试，熟悉从项目调研、任务推进、跨部门沟通到内容交付的完整流程。现求职方向包括内容运营、项目执行、活动策划助理及电竞内容运营，希望将内容制作能力、项目执行经验和游戏/电竞兴趣结合，应用于真实业务场景中的内容策划、活动落地与用户沟通。
-          </p>
-        </div>
+        <MotionReveal delay={0.18} className="rounded-[2rem]">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-white/[0.06] hover:shadow-[0_20px_80px_rgba(34,211,238,0.12)] sm:p-8">
+            <p className="max-w-5xl text-lg leading-9 text-slate-200">
+              我是 XJTLU 艺术科技与娱乐专业应届毕业生，本科阶段长期处于全英文授课与跨文化协作环境中。我的项目经历覆盖商业创新、展览执行、AIGC 影像创作、短视频制作与游戏测试，熟悉从项目调研、任务推进、跨部门沟通到内容交付的完整流程。现求职方向包括内容运营、项目执行、活动策划助理及电竞内容运营，希望将内容制作能力、项目执行经验和游戏/电竞兴趣结合，应用于真实业务场景中的内容策划、活动落地与用户沟通。
+            </p>
+          </div>
+        </MotionReveal>
       </section>
 
       <section id="项目" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Selected Work" title="核心项目" />
         <div className="grid items-stretch gap-6 lg:grid-cols-2">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const projectCard = (
               <SpotlightCard
                 key={project.name}
@@ -528,21 +433,29 @@ export default function Home() {
 
             if (project.modal) {
               return (
-                <ProjectModal key={project.name} modal={project.modal}>
-                  {projectCard}
-                </ProjectModal>
+                <MotionReveal key={project.name} delay={0.12 + index * 0.08} className="h-full">
+                  <ProjectModal modal={project.modal}>
+                    {projectCard}
+                  </ProjectModal>
+                </MotionReveal>
               );
             }
 
             if (project.link) {
               return (
-                <a key={project.name} href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                  {projectCard}
-                </a>
+                <MotionReveal key={project.name} delay={0.12 + index * 0.08} className="h-full">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    {projectCard}
+                  </a>
+                </MotionReveal>
               );
             }
 
-            return projectCard;
+            return (
+              <MotionReveal key={project.name} delay={0.12 + index * 0.08} className="h-full">
+                {projectCard}
+              </MotionReveal>
+            );
           })}
         </div>
       </section>
@@ -550,7 +463,7 @@ export default function Home() {
       <section id="实习" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Experience" title="实习经历" />
         <div className="grid gap-6 md:grid-cols-2">
-          {internships.map((item) => {
+          {internships.map((item, index) => {
             const internshipCard = (
               <SpotlightCard
                 key={item.company}
@@ -567,13 +480,19 @@ export default function Home() {
 
             if (item.modal) {
               return (
-                <ProjectModal key={item.company} modal={item.modal}>
-                  {internshipCard}
-                </ProjectModal>
+                <MotionReveal key={item.company} delay={0.12 + index * 0.1} className="h-full">
+                  <ProjectModal modal={item.modal}>
+                    {internshipCard}
+                  </ProjectModal>
+                </MotionReveal>
               );
             }
 
-            return internshipCard;
+            return (
+              <MotionReveal key={item.company} delay={0.12 + index * 0.1} className="h-full">
+                {internshipCard}
+              </MotionReveal>
+            );
           })}
         </div>
       </section>
@@ -582,41 +501,46 @@ export default function Home() {
         <SectionTitle eyebrow="Capabilities" title="核心能力" />
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {skills.map((skill, index) => (
-            <SpotlightCard
-              key={skill.title}
-              spotlightColor="rgba(34, 211, 238, 0.14)"
-              className="h-full rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-cyan-300/[0.04] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-white/[0.07] hover:shadow-[0_18px_70px_rgba(34,211,238,0.10)]"
-            >
-              <div className="flex h-full flex-col">
-                <div className="flex-1">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/15 text-lg font-bold text-cyan-100">
-                    0{index + 1}
+            <MotionReveal key={skill.title} delay={0.12 + index * 0.08} className="h-full">
+              <SpotlightCard
+                spotlightColor="rgba(34, 211, 238, 0.14)"
+                className="h-full rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-cyan-300/[0.04] p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-white/[0.07] hover:shadow-[0_18px_70px_rgba(34,211,238,0.10)]"
+              >
+                <div className="flex h-full flex-col">
+                  <div className="flex-1">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/15 text-lg font-bold text-cyan-100">
+                      0{index + 1}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{skill.title}</h3>
+                    <p className="mt-4 leading-7 text-slate-300">{skill.description}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{skill.title}</h3>
-                  <p className="mt-4 leading-7 text-slate-300">{skill.description}</p>
+                  {skill.title === "语言能力" ? (
+                    <a
+                      href="/language-proof.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex w-fit items-center rounded-full border border-cyan-200/30 bg-cyan-300/10 px-4 py-2 text-xs font-semibold text-cyan-100 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+                    >
+                      查看语言能力证明↗
+                    </a>
+                  ) : null}
                 </div>
-                {skill.title === "语言能力" ? (
-                  <a
-                    href="/language-proof.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex w-fit items-center rounded-full border border-cyan-200/30 bg-cyan-300/10 px-4 py-2 text-xs font-semibold text-cyan-100 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-300/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-                  >
-                    查看语言能力证明↗
-                  </a>
-                ) : null}
-              </div>
-            </SpotlightCard>
+              </SpotlightCard>
+            </MotionReveal>
           ))}
         </div>
 
         <div className="mt-10">
           <div className="mb-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/70">Personal Interests</p>
-            <h3 className="mt-2 text-2xl font-bold text-white">个人兴趣</h3>
+            <MotionReveal y={22} scale={1} duration={0.75}>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/70">Personal Interests</p>
+            </MotionReveal>
+            <MotionReveal delay={0.08} y={24} scale={1} duration={0.75}>
+              <h3 className="mt-2 text-2xl font-bold text-white">个人兴趣</h3>
+            </MotionReveal>
           </div>
           <div className="grid items-stretch gap-4 md:grid-cols-3">
-            {personalInterests.map((interest) => {
+            {personalInterests.map((interest, index) => {
               const interestCard = (
                 <SpotlightCard
                   spotlightColor={interest.spotlightColor}
@@ -632,9 +556,11 @@ export default function Home() {
               );
 
               return (
-                <ProjectModal key={interest.title} modal={interest.modal}>
-                  {interestCard}
-                </ProjectModal>
+                <MotionReveal key={interest.title} delay={0.12 + index * 0.08} className="h-full">
+                  <ProjectModal modal={interest.modal}>
+                    {interestCard}
+                  </ProjectModal>
+                </MotionReveal>
               );
             })}
           </div>
@@ -643,9 +569,10 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <SectionTitle eyebrow="Awards" title="奖项荣誉" />
+        <MotionReveal delay={0.14} className="rounded-[1.75rem]">
         <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 sm:p-8">
           <div className="grid gap-4 md:grid-cols-2">
-            {awards.map((award) => {
+            {awards.map((award, index) => {
               const awardCard = (
                 <SpotlightCard
                   spotlightColor="rgba(251, 191, 36, 0.14)"
@@ -659,19 +586,27 @@ export default function Home() {
 
               if (award.link) {
                 return (
-                  <a key={award.title} href={award.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                    {awardCard}
-                  </a>
+                  <MotionReveal key={award.title} delay={0.1 + index * 0.07} className="h-full">
+                    <a href={award.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                      {awardCard}
+                    </a>
+                  </MotionReveal>
                 );
               }
 
-              return <div key={award.title}>{awardCard}</div>;
+              return (
+                <MotionReveal key={award.title} delay={0.1 + index * 0.07} className="h-full">
+                  <div className="h-full">{awardCard}</div>
+                </MotionReveal>
+              );
             })}
           </div>
         </div>
+        </MotionReveal>
       </section>
 
       <section id="联系" className="scroll-mt-28 mx-auto max-w-7xl px-5 py-16 sm:px-8">
+        <MotionReveal className="rounded-[2rem]">
         <div className="overflow-hidden rounded-[2rem] border border-cyan-200/20 bg-cyan-300/[0.08] p-8 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
             <div>
@@ -707,6 +642,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </MotionReveal>
       </section>
     </main>
   );
@@ -756,8 +692,12 @@ function BackgroundAnimation() {
 function SectionTitle({ eyebrow, title }: SectionTitleProps) {
   return (
     <div className="mb-8">
-      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{title}</h2>
+      <MotionReveal y={24} scale={1} duration={0.8}>
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">{eyebrow}</p>
+      </MotionReveal>
+      <MotionReveal delay={0.1} y={28} scale={1} duration={0.8}>
+        <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{title}</h2>
+      </MotionReveal>
     </div>
   );
 }
