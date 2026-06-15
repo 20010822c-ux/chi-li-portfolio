@@ -227,15 +227,15 @@ const personalInterests = [
     },
   },
   {
-    title: "健身与阅读",
+    title: "健身、阅读与做饭",
     description:
-      "平时会通过健身保持状态，也有阅读习惯。一个帮助我保持稳定节奏，一个帮助我持续输入新内容和新想法。",
+      "平时会通过健身保持状态，也有阅读和做饭的习惯。健身帮助我保持稳定节奏，阅读让我持续输入新的内容和想法，而做饭则是我放松和整理生活节奏的一种方式。",
     icon: "📚",
     iconClass: "border-violet-200/20 bg-violet-300/10 text-violet-100",
     spotlightColor: "rgba(196, 181, 253, 0.10)",
     modal: {
-      title: "健身与阅读",
-      description: "展示健身、阅读、日常记录和个人状态管理相关图片。",
+      title: "健身、阅读与做饭",
+      description: "展示健身、阅读、做饭和日常生活节奏管理相关图片。",
       images: [
         "/interests/fitness-reading/01.jpg",
         "/interests/fitness-reading/02.jpg",
