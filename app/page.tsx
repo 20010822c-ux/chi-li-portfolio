@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SpotlightCard from "../components/SpotlightCard";
 import ProjectModal from "../components/ProjectModal";
 import MotionReveal from "../components/MotionReveal";
@@ -352,16 +353,16 @@ export default function Home() {
 
               <MotionReveal delay={0.35} duration={1} y={24} className="flex flex-col items-center lg:items-end">
                 <div className="relative w-full max-w-[295px] rounded-[2rem] border border-white/15 bg-white/[0.06] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-md">
-                  <div className="aspect-[295/413] overflow-hidden rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.18),rgba(15,23,42,0.58)_46%,rgba(2,6,23,0.92))] p-4">
-                    <div className="relative flex h-full flex-col items-center justify-center rounded-[1.2rem] border border-dashed border-cyan-100/35 bg-black/10 text-center">
-                      <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-100/35 bg-cyan-100/10 text-4xl text-cyan-50">
-                        人像
-                      </div>
-                      <p className="text-lg font-semibold text-white">求职头像 Placeholder</p>
-                      <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-300">
-                        预留 295 × 413 px 比例，后续可替换为正式职业头像。
-                      </p>
-                    </div>
+                  <div className="relative aspect-[295/413] overflow-hidden rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.18),rgba(15,23,42,0.58)_46%,rgba(2,6,23,0.92))]">
+                    <Image
+                      src="/profile/portrait.svg"
+                      alt="Chi Li portrait"
+                      fill
+                      priority
+                      sizes="295px"
+                      className="object-cover object-center"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-cyan-100/5" />
                   </div>
                 </div>
               </MotionReveal>
