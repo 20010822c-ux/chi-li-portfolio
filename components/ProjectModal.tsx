@@ -80,10 +80,6 @@ export default function ProjectModal({ children, modal }: ProjectModalProps) {
               key={src}
               className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl shadow-black/20"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center">
-                <p className="text-sm font-semibold text-cyan-100">项目展示图 {String(index + 1).padStart(2, "0")}</p>
-                <p className="mt-2 text-xs leading-5 text-slate-400">后续可替换为 {src}</p>
-              </div>
               <Image
                 src={src}
                 alt={`${modal.title} 项目展示图 ${index + 1}`}
