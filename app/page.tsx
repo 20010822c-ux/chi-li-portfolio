@@ -2,6 +2,7 @@ import Image from "next/image";
 import SpotlightCard from "../components/SpotlightCard";
 import ProjectModal from "../components/ProjectModal";
 import MotionReveal from "../components/MotionReveal";
+import LanguageToggle from "../components/LanguageToggle";
 
 // Keep the portfolio content in this page so the static Vercel build can render the latest PR layout.
 const projects = [
@@ -312,8 +313,8 @@ export default function Home() {
 
                 <MotionReveal delay={0.18} duration={1} y={36} scale={1}>
                   <h1 className="text-[clamp(2.5rem,9vw,5.8rem)] font-black leading-[0.95] tracking-[-0.06em] text-white">
-                    李持
-                    <span className="mt-2 block text-[0.72em] tracking-[-0.045em] text-cyan-100">Chi Li</span>
+                    <span data-i18n-name="primary">李持</span>
+                    <span data-i18n-name="secondary" className="mt-2 block text-[0.72em] tracking-[-0.045em] text-cyan-100">Chi Li</span>
                   </h1>
                 </MotionReveal>
 
@@ -667,13 +668,16 @@ function TopNavigation() {
             </a>
           ))}
         </div>
-        <a
-          className="shrink-0 rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
-          href="/resume-chi-li.pdf"
-          download
-        >
-          下载简历
-        </a>
+        <div className="flex shrink-0 items-center gap-2">
+          <LanguageToggle />
+          <a
+            className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus:outline-none focus:ring-2 focus:ring-cyan-300/50"
+            href="/resume-chi-li.pdf"
+            download
+          >
+            下载简历
+          </a>
+        </div>
       </nav>
     </header>
   );
