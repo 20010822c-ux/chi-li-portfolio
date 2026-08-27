@@ -39,7 +39,7 @@ const projects = [
   {
     name: "商业创意实践与展览执行项目",
     time: "2025.11–2026.06",
-    role: "Finance Director / Communication Coordinator",
+    role: "项目财务负责人 / 团队内沟通协调员",
     tags: ["展览执行", "预算管理", "沟通协调", "现场落地"],
     summary:
       "参与商业创意实践项目与线下展览执行，覆盖预算、供应商沟通、物料跟进与现场协作。",
@@ -404,7 +404,10 @@ export default function Home() {
                       <p className="text-sm font-medium text-cyan-200">{project.time}</p>
                       <h3 className="mt-3 min-h-[4rem] text-2xl font-black leading-tight text-white">{project.name}</h3>
                     </div>
-                    <span className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 text-xs font-medium text-cyan-50 sm:max-w-[18rem]">
+                    <span
+                      data-i18n-key={project.name === "商业创意实践与展览执行项目" ? "exhibition-role" : undefined}
+                      className="rounded-full border border-cyan-100/20 bg-cyan-100/10 px-3 py-1 text-xs font-medium text-cyan-50 sm:max-w-[18rem]"
+                    >
                       {project.role}
                     </span>
                   </div>
@@ -428,7 +431,9 @@ export default function Home() {
                     </ul>
                   </div>
                   <p className="mt-4 border-l-2 border-cyan-300/60 pl-4 text-sm leading-6 text-slate-200">
-                    <span className="font-semibold text-cyan-100">项目成果：</span>
+                    <span data-i18n-key="project-result-label" className="font-semibold text-cyan-100">
+                      项目成果：
+                    </span>
                     {project.result}
                   </p>
                 </div>

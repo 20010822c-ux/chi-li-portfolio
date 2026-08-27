@@ -42,6 +42,7 @@ const zhToEn: Record<string, string> = {
   "根据赛事主题调整镜头节奏、角色一致性与视觉风格，保证短片叙事完整度。": "Adjusted pacing, character consistency and visual style according to the competition theme to ensure a complete short-film narrative.",
   "作品入围优秀作品奖，验证了个人从创意到交付的 AIGC 影像制作能力。": "The work was shortlisted for an Outstanding Work Award, demonstrating my ability to deliver AIGC video from concept to final output.",
   "商业创意实践与展览执行项目": "Business Creative Practice & Exhibition Execution Project",
+  "项目财务负责人 / 团队内沟通协调员": "Finance Director / Communication Coordinator",
   "展览执行": "Exhibition Execution",
   "预算管理": "Budget Management",
   "沟通协调": "Coordination",
@@ -134,6 +135,17 @@ const zhToEn: Record<string, string> = {
 
 const enToZh = Object.fromEntries(Object.entries(zhToEn).map(([zh, en]) => [en, zh]));
 
+const stableTranslations = {
+  "exhibition-role": {
+    zh: "项目财务负责人 / 团队内沟通协调员",
+    en: "Finance Director / Communication Coordinator",
+  },
+  "project-result-label": {
+    zh: "项目成果：",
+    en: "Outcome: ",
+  },
+} as const;
+
 function getTextMap(language: Language) {
   return language === "en" ? zhToEn : enToZh;
 }
@@ -152,7 +164,7 @@ function translateTextValue(value: string, textMap: Record<string, string>) {
 }
 
 function shouldSkipElement(element: Element | null) {
-  return Boolean(element?.closest("script, style, textarea, input, [data-language-toggle], [data-i18n-name]"));
+  return Boolean(element?.closest("script, style, textarea, input, [data-language-toggle], [data-i18n-name], [data-i18n-key]"));
 }
 
 function updateSpecialElements(language: Language) {
@@ -166,6 +178,14 @@ function updateSpecialElements(language: Language) {
   if (secondaryName) {
     secondaryName.textContent = language === "en" ? "Portfolio" : "Chi Li";
   }
+
+  document.querySelectorAll<HTMLElement>("[data-i18n-key]").forEach((element) => {
+    const key = element.dataset.i18nKey as keyof typeof stableTranslations | undefined;
+
+    if (key && stableTranslations[key]) {
+      element.textContent = stableTranslations[key][language];
+    }
+  });
 }
 
 function translateNode(root: ParentNode, language: Language) {
