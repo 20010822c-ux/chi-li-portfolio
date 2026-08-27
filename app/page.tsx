@@ -269,6 +269,18 @@ const awards = [
     link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:bacbbb98-2c46-4fb3-8431-ce9d3c8db280",
   },
   {
+    title: "University of Liverpool 学士学位证书",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:cb43b537-97d6-4f4e-811b-e89501ea9b91",
+  },
+  {
+    title: "教育部留学服务中心 国外学历学位认证",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7c2558e7-2e10-4a85-9056-dd433b7cf9fe",
+  },
+  {
+    title: "XJTLU Contemporary Entrepreneurialism Certificate 创业能力证书",
+    link: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:141339e8-ebe8-45d2-ba93-fa586aa9fcd3",
+  },
+  {
     title: "受邀作为 XJTLU 优秀毕业生接受校方采访",
   },
 ];
